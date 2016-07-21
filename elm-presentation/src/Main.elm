@@ -1,12 +1,13 @@
 module Main exposing (..)
 
-import Html exposing (text, div)
+import Html exposing (text, div, h3, em, node)
 import Html.Attributes exposing (..)
 import Html.App as Html
 import Array exposing (..)
 import Keyboard
 import Keyboard.Extra exposing (..)
 import Config exposing (..)
+import CDN exposing (skeleton)
 
 
 main : Program Never
@@ -87,10 +88,18 @@ view model =
     in
         case slide of
             Just slide' ->
-                slideLayout slide' model.page (Array.length model.slides)
+                [ slideLayout slide' model.page (Array.length model.slides) ] |> container
 
             Nothing ->
-                emptyLayout
+                container []
+
+
+container : List (Html.Html Msg) -> Html.Html Msg
+container components =
+    div []
+        (skeleton.css
+            :: components
+        )
 
 
 slideLayout : Html.Html Msg -> Int -> Int -> Html.Html Msg
@@ -98,45 +107,40 @@ slideLayout slide page total =
     div
         [ style
             [ ( "margin", "25px auto" )
-            , ( "width", "90%" )
-            , ( "height", "90%" )
+            , ( "width", "1024px" )
+            , ( "height", "768px" )
             ]
         ]
         [ div
             [ style
-                [ ( "height", "10%" )
+                [ ( "height", "50px" )
                 , ( "text-align", "center" )
                 , ( "background-color", "deeppink" )
                 ]
             ]
-            [ text "HEADER" ]
+            [ h3 [ style [ ( "color", "white" ) ] ] [ text "AN OVERVIEW OF ELM" ] ]
         , div
             [ style
-                [ ( "height", "80%" )
+                [ ( "height", "693px" )
                 , ( "padding", "20px" )
-                , ( "background-color", "#494949" )
+                , ( "background-color", "lightgrey" )
                 ]
             ]
             [ slide ]
         , div
             [ style
-                [ ( "height", "10%" )
+                [ ( "height", "25px" )
                 , ( "text-align", "center" )
                 , ( "background-color", "deeppink" )
                 ]
             ]
-            [ text "FOOTER", text (pagination page total) ]
+            [ div [ style [ ( "color", "white" ) ] ] [ text ("LONDON TECH BI-WEEKLY MEETING :: UNIBET 2016 :: " ++ (pagination page total)) ] ]
         ]
 
 
 pagination : Int -> Int -> String
 pagination page total =
-    "(" ++ (toString page) ++ "/" ++ (toString total) ++ ")"
-
-
-emptyLayout : Html.Html Msg
-emptyLayout =
-    div [] []
+    "[" ++ (toString page) ++ "/" ++ (toString total) ++ "]"
 
 
 

@@ -77,8 +77,7 @@ spaceCatRequest =
 view : Model -> Html.Html Msg
 view model =
     div []
-        [ audio [ src "music/magic-fly-music-video.mp3", property "currentTime" (JsonEncode.float 12.6), loop True, autoplay True, hidden True ] []
-          --audio [ src "music/shes-a-maniac.mp3", property "currentTime" (JsonEncode.float 12.6), loop True, autoplay True, hidden True ] []
+        [ audio [ src "music/magic-fly-music-video.mp3", property "currentTime" (JsonEncode.float 8.4), loop True, autoplay True, hidden True ] []
         , img [ src model.spaceCatGifUrl, fullScreenStyle ] []
         ]
 

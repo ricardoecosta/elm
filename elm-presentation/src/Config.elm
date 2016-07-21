@@ -1,56 +1,265 @@
 module Config exposing (..)
 
-import Slide exposing (..)
+import Markdown
 import Html
 
 
-slides : List (Html.Html a)
+markdownSlide : String -> Html.Html msg
+markdownSlide markdown =
+    Markdown.toHtml [] markdown
+
+
+slides : List (Html.Html msg)
 slides =
     [ slide1
-    , slide1
-    , slide1
+    , slide2
+    , slide3
+    , slide4
+    , slide5
+    , slide6
+    , slide7
+    , slide8
+    , slide9
+    , slide10
+    , slide11
+    , slide12
+    , slide13
+    , slide14
+    , slide15
+    , slide16
+    , slide17
     ]
 
 
-slide1 : Html.Html a
+slide1 : Html.Html msg
 slide1 =
-    slide """
-An h1 header
-============
+    markdownSlide """
 
-Paragraphs are separated by a blank line.
+<br><br>
 
-2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
-look like:
+![](/images/elm-logo.png)
 
-  * this one
-  * that one
-  * the other one
+<br>
 
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
-
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
-
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
-
-Here's a code sample:
-
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
-
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
-
-~~~
-define foobar() {
-    print "Welcome to flavor country!";
-}
-~~~
+&nbsp;&nbsp;&nbsp;&nbsp;_Ricardo Costa_
 """
+
+
+slide2 : Html.Html msg
+slide2 =
+    markdownSlide """
+# A few things first...
+
+#### ⇒ wanted learn a pure functional language
+
+#### ⇒ wanted to know more about the inspiration of redux
+
+#### ⇒ looks like a very promissing option for client development
+
+#### ⇒ this is not a **javascript vs whatever** presentation
+
+#### ⇒ remove your OOP hat for a moment
+
+#### ⇒ this presentation was done in Elm from scratch
+"""
+
+
+slide3 : Html.Html msg
+slide3 =
+    markdownSlide """
+# So Elm huh? What is it?
+
+#### ⇒ pure functional language
+
+#### ⇒ compiles to javascript and runs in the browser
+
+#### ⇒ ML based language, influenced by Haskel, but simpler
+
+#### ⇒ by Evan Czaplicki during his thesis on concurrent FRP
+"""
+
+
+slide4 : Html.Html msg
+slide4 =
+    markdownSlide """
+# Agenda
+
+#### ⇒ Functions
+
+#### ⇒ Type System
+
+#### ⇒ Friendly Compiler
+
+#### ⇒ Semantic Versioning
+
+#### ⇒ Elm Architecture
+
+#### ⇒ Live Demo
+"""
+
+
+slide5 : Html.Html msg
+slide5 =
+    markdownSlide """
+# Functions
+
+#### ⇒ pure functions
+
+#### ⇒ no side effects
+
+#### ⇒ curried by default
+
+![](/images/functions.png)
+"""
+
+
+slide6 : Html.Html msg
+slide6 =
+    markdownSlide """
+# Functions
+
+#### ⇒ examples:
+
+![](/images/functions.png)
+"""
+
+
+slide7 : Html.Html msg
+slide7 =
+    markdownSlide """
+# Type System
+
+#### ⇒ static and strong type system
+
+#### ⇒ no need to define data types, but more readable if defined
+
+#### ⇒ union data types and records
+
+#### ⇒ duck typing
+
+#### ⇒ no null references, adios 'undefined is not a function'
+
+#### ⇒ immutability
+"""
+
+
+slide8 : Html.Html msg
+slide8 =
+    markdownSlide """
+# Type System
+
+#### ⇒ examples:
+
+![](/images/types.png)
+"""
+
+
+slide9 : Html.Html msg
+slide9 =
+    markdownSlide """
+# Friendly Compiler
+
+![](/images/naming.png)
+
+-- from http://elm-lang.org/blog/compiler-errors-for-humans
+"""
+
+
+slide10 : Html.Html msg
+slide10 =
+    markdownSlide """
+# Friendly Compiler
+
+![](/images/missing-field.png)
+
+-- from http://elm-lang.org/blog/compiler-errors-for-humans
+"""
+
+
+slide11 : Html.Html msg
+slide11 =
+    markdownSlide """
+# Friendly Compiler
+
+![](/images/list.png)
+
+-- from http://elm-lang.org/blog/compiler-errors-for-humans
+"""
+
+
+slide12 : Html.Html msg
+slide12 =
+    markdownSlide """
+# Semantic Versioning
+
+#### ⇒ elm package checks whether is a PATCH, MINOR or MAJOR versioning
+
+#### ⇒ forces you to bump MAJOR version if it's a breaking change
+"""
+
+
+slide13 : Html.Html msg
+slide13 =
+    markdownSlide """
+# The Elm Architecture
+
+#### ⇒ **redux** was inspired by **Elm Architecture**
+
+#### ⇒ three main actors:
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;⇒ Model
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;⇒ View
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;⇒ Update
+
+![](/images/elm-arch-program.png)
+"""
+
+
+slide14 : Html.Html msg
+slide14 =
+    markdownSlide """
+# The Elm Architecture
+
+#### ⇒ interactions between actors:
+
+![](/images/elm-arch-diagram.png)
+
+ -- from http://www.slideshare.net/theburningmonk/my-adventure-with-elm-polyconf-16
+"""
+
+
+slide15 : Html.Html msg
+slide15 =
+    markdownSlide """
+# Live Demo
+
+# ******** SPACE CATS ********
+"""
+
+
+slide16 : Html.Html msg
+slide16 =
+    markdownSlide """
+# The End |> Thank You |> Questions?
+
+<br><br><br><br><br><br><br><br>
+
+#### read more about Elm at:
+#### &nbsp;&nbsp;&nbsp;&nbsp;⇒ http://guide.elm-lang.org/
+#### &nbsp;&nbsp;&nbsp;&nbsp;⇒ http://elm-lang.org/
+"""
+
+
+slide17 : Html.Html msg
+slide17 =
+    markdownSlide """
+# Who is using Elm commercially?
+
+![](/images/commercial-users.png)
+"""
+
+
+
+-- conclusion: forget about OOP, functions, immutability, composition, central state
