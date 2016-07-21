@@ -15,7 +15,7 @@ main =
         { init = ( initialModel, performRequestSpaceCatTask )
         , update = update
         , view = view
-        , subscriptions = (\model -> Time.every (3 * second) (always FetchSpaceCat))
+        , subscriptions = (\model -> Time.every (2 * second) (always FetchSpaceCat))
         }
 
 
@@ -78,6 +78,7 @@ view : Model -> Html.Html Msg
 view model =
     div []
         [ audio [ src "music/magic-fly-music-video.mp3", property "currentTime" (JsonEncode.float 12.6), loop True, autoplay True, hidden True ] []
+          --audio [ src "music/shes-a-maniac.mp3", property "currentTime" (JsonEncode.float 12.6), loop True, autoplay True, hidden True ] []
         , img [ src model.spaceCatGifUrl, fullScreenStyle ] []
         ]
 
