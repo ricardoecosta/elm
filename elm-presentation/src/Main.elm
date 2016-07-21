@@ -107,8 +107,8 @@ slideLayout slide page total =
     div
         [ style
             [ ( "margin", "25px auto" )
-            , ( "width", "1024px" )
-            , ( "height", "768px" )
+            , ( "width", "900px" )
+            , ( "height", "700px" )
             ]
         ]
         [ div
@@ -121,7 +121,7 @@ slideLayout slide page total =
             [ h3 [ style [ ( "color", "white" ) ] ] [ text "AN OVERVIEW OF ELM" ] ]
         , div
             [ style
-                [ ( "height", "693px" )
+                [ ( "height", "625px" )
                 , ( "padding", "20px" )
                 , ( "background-color", "lightgrey" )
                 ]

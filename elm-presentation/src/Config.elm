@@ -37,43 +37,47 @@ slide1 =
 
 <br><br>
 
-![](/images/elm-logo.png)
+![](images/elm-logo.png)
 
 <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;_Ricardo Costa_
+&nbsp;&nbsp;&nbsp;&nbsp;Ricardo Costa
 """
 
 
 slide2 : Html.Html msg
 slide2 =
     markdownSlide """
-# A few things first...
+# Why did I pick Elm?
 
-#### ⇒ wanted learn a pure functional language
+#### ⇒ to learn a pure functional language
 
-#### ⇒ wanted to know more about the inspiration of redux
+#### ⇒ to know more about the inspiration of redux
 
-#### ⇒ looks like a very promissing option for client development
+#### ⇒ to look at a very promissing option for FE web development
 
 #### ⇒ this is not a **javascript vs whatever** presentation
 
-#### ⇒ remove your OOP hat for a moment
+#### ⇒ take off your OOP hat for a moment
 
-#### ⇒ this presentation was done in Elm from scratch
+#### ⇒ this presentation was written in Elm
 """
 
 
 slide3 : Html.Html msg
 slide3 =
     markdownSlide """
-# So Elm huh? What is it?
+# So Elm huh? What is it? o_O
 
-#### ⇒ pure functional language
+#### ⇒ a pure functional language
+
+#### ⇒ a strict language
+
+#### ⇒ based on ML languages, influenced by Haskel, but simpler
 
 #### ⇒ compiles to javascript and runs in the browser
 
-#### ⇒ ML based language, influenced by Haskel, but simpler
+#### ⇒ everything is caught by the compiler, no runtime errors
 
 #### ⇒ by Evan Czaplicki during his thesis on concurrent FRP
 """
@@ -103,13 +107,12 @@ slide5 =
     markdownSlide """
 # Functions
 
-#### ⇒ pure functions
+#### ⇒ all functions are pure
 
-#### ⇒ no side effects
+#### ⇒ all functions are side effects free
 
-#### ⇒ curried by default
+#### ⇒ all function are curried by default
 
-![](/images/functions.png)
 """
 
 
@@ -120,7 +123,7 @@ slide6 =
 
 #### ⇒ examples:
 
-![](/images/functions.png)
+![](images/functions.png)
 """
 
 
@@ -150,7 +153,7 @@ slide8 =
 
 #### ⇒ examples:
 
-![](/images/types.png)
+![](images/types.png)
 """
 
 
@@ -159,7 +162,7 @@ slide9 =
     markdownSlide """
 # Friendly Compiler
 
-![](/images/naming.png)
+![](images/naming.png)
 
 -- from http://elm-lang.org/blog/compiler-errors-for-humans
 """
@@ -170,7 +173,7 @@ slide10 =
     markdownSlide """
 # Friendly Compiler
 
-![](/images/missing-field.png)
+![](images/missing-field.png)
 
 -- from http://elm-lang.org/blog/compiler-errors-for-humans
 """
@@ -181,7 +184,7 @@ slide11 =
     markdownSlide """
 # Friendly Compiler
 
-![](/images/list.png)
+![](images/list.png)
 
 -- from http://elm-lang.org/blog/compiler-errors-for-humans
 """
@@ -192,7 +195,7 @@ slide12 =
     markdownSlide """
 # Semantic Versioning
 
-#### ⇒ elm package checks whether is a PATCH, MINOR or MAJOR versioning
+#### ⇒ elm package checks if PATCH, MINOR or MAJOR version
 
 #### ⇒ forces you to bump MAJOR version if it's a breaking change
 """
@@ -213,7 +216,7 @@ slide13 =
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;⇒ Update
 
-![](/images/elm-arch-program.png)
+![](images/elm-arch-program.png)
 """
 
 
@@ -224,7 +227,7 @@ slide14 =
 
 #### ⇒ interactions between actors:
 
-![](/images/elm-arch-diagram.png)
+![](images/elm-arch-diagram.png)
 
  -- from http://www.slideshare.net/theburningmonk/my-adventure-with-elm-polyconf-16
 """
@@ -235,7 +238,9 @@ slide15 =
     markdownSlide """
 # Live Demo
 
-# ******** SPACE CATS ********
+<br><br>
+
+# ********* ELM SPACE CATS ********
 """
 
 
@@ -257,7 +262,7 @@ slide17 =
     markdownSlide """
 # Who is using Elm commercially?
 
-![](/images/commercial-users.png)
+![](images/commercial-users.png)
 """
 
 
